@@ -17,6 +17,15 @@ def encode(password):
         else:
             result+=str(int(password[i])+3)
     return result
+
+
+def decode(password):
+    result = ""
+    for i in range(0, len(password)):
+        result += str(int(password[i]) - 3)
+    return result
+
+
 def main():
     user_input=-1
     while user_input!=3:
@@ -26,6 +35,7 @@ def main():
             user_password = input("Please enter your password to encode: ")
             encode_password = (encode(user_password))
             print("Your password has been encoded and stored!")
-            user_input=int(input('Please enter an option: '))
         if user_input==2:
+            print("The encoded password is " + encode_password + ", and the original password is " + decode(encode_password) + ".")
             
+main()
