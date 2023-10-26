@@ -20,9 +20,12 @@ def encode(password):
 
 
 def decode(password):
-    result = ""
-    for i in range(0, len(password)):
-        result += str(int(password[i]) - 3)
+    result=""
+    for i in range(0,len(password)):
+        if (int(password[i]) - 3 < 0):
+            result += str((int(password[i]) - 3) % 10)
+        else:
+            result += str(int(password[i]) - 3)
     return result
 
 
