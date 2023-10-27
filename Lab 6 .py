@@ -2,7 +2,9 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#Liang Zengtao & Natsha Buehler Lab6 group project
 def print_menu():
+    #print the menu
     print("Menu")
     print("-------------")
     print("1. Encode")
@@ -10,6 +12,7 @@ def print_menu():
     print("3. Quit")
 
 def encode(password):
+    #encode the password by shifting up 3
     result=""
     for i in range(0,len(password)):
         if (int(password[i])+3>=10):
@@ -20,6 +23,7 @@ def encode(password):
 
 
 def decode(password):
+    #decode the password by shifting down 3
     result=""
     for i in range(0,len(password)):
         if (int(password[i]) - 3 < 0):
@@ -30,6 +34,7 @@ def decode(password):
 
 
 def main():
+    #the main function for user to choose options from
     user_input=-1
     while user_input!=3:
         print_menu()
@@ -40,5 +45,8 @@ def main():
             print("Your password has been encoded and stored!")
         if user_input==2:
             print("The encoded password is " + encode_password + ", and the original password is " + decode(encode_password) + ".")
+        if user_input==3:
+            break
             
-main()
+if __name__=="__main__":
+    main()
